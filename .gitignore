@@ -1,0 +1,13 @@
+# AWS / SSH Keys
+*.pem
+*.ppk
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Evidence / Local OS
+.DS_Store
+Thumbs.db
