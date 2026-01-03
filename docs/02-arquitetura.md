@@ -1,8 +1,6 @@
 # Project Context | Contexto do Projeto
 
-![Arquitetuura de Migração para AWS](./images/image.png)
-
-[🇺🇸 English]
+![AWS Migration Architecture](./images/arquiteture.png)
 
 ## Target Architecture Design
 
@@ -31,6 +29,8 @@ Region: us-east-1.
 [🇧🇷 Português]
 
 ## Design da Arquitetura Alvo
+
+![AWS Migration Architecture](./images/arquitetura.png)
 
 ## 1. Topologia de Rede (VPC)
 

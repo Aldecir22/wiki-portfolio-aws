@@ -1,7 +1,5 @@
 # Lessons Learned | Aprendizados
 
-[🇺🇸 English]
-
 - **Phase 1:** Importance of sizing alignment with Free Tier limits to optimize costs.
 
 [🇧🇷 Português]
