@@ -12,3 +12,19 @@ projeto_flask/
 # Evidence / Local OS
 .DS_Store
 Thumbs.db
+
+# Portfolio Site Exclusions
+# --- Portfolio Site (Lovable/Vite) ---
+site-portfolio/source/node_modules/
+site-portfolio/source/dist/
+site-portfolio/source/dist-ssr/
+site-portfolio/source/*.local
+site-portfolio/source/npm-debug.log*
+site-portfolio/source/yarn-debug.log*
+site-portfolio/source/yarn-error.log*
+
+# --- Editor & OS (General) ---
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
