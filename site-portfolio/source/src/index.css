@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* AWS Dark Theme - Primary Mode */
+    --background: 220 20% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 11%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 11%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 213 94% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 220 15% 18%;
+    --accent-foreground: 213 94% 70%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.5rem;
+
+    /* AWS-themed custom tokens */
+    --aws-orange: 25 95% 53%;
+    --aws-orange-light: 32 95% 60%;
+    --aws-dark: 220 20% 8%;
+    --aws-dark-elevated: 220 18% 11%;
+    --aws-dark-surface: 220 15% 15%;
+    --aws-blue: 213 94% 55%;
+    --aws-teal: 180 60% 45%;
+    --aws-green: 142 72% 45%;
+    --code-bg: 220 20% 6%;
+    --code-text: 150 60% 70%;
+    --success: 142 72% 45%;
+    --warning: 38 92% 50%;
+    --info: 213 94% 55%;
+
+    --sidebar-background: 220 18% 11%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 220 20% 5%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 8%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 8%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 213 94% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 220 15% 15%;
+    --accent-foreground: 213 94% 70%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 25 95% 53%;
+
+    --code-bg: 220 20% 4%;
+    --code-text: 150 60% 70%;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 12%;
+    --sidebar-ring: 25 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent;
+  }
+
+  .aws-gradient {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--aws-orange-light)) 50%, hsl(var(--primary)) 100%);
+  }
+
+  .glass-card {
+    @apply bg-card/90 backdrop-blur-sm border border-border shadow-lg;
+    box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .code-block {
+    @apply rounded-lg p-4 text-sm overflow-x-auto border border-border;
+    background-color: hsl(var(--code-bg));
+    color: hsl(var(--code-text));
+  }
+
+  .evidence-image {
+    @apply rounded-lg border border-border shadow-md hover:shadow-xl transition-all duration-300 hover:border-secondary/50;
+  }
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-secondary transition-colors duration-200 text-sm font-medium;
+  }
+
+  .nav-link-active {
+    @apply text-secondary font-semibold;
+  }
+
+  .tech-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-accent text-accent-foreground border border-border hover:border-secondary/50 transition-colors;
+  }
+
+  .aws-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border;
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--muted)) 100%);
+    border-color: hsl(var(--secondary) / 0.3);
+    color: hsl(var(--secondary));
+  }
+
+  .section-title {
+    @apply text-3xl lg:text-4xl font-bold text-foreground mb-4;
+  }
+
+  .section-divider {
+    @apply w-20 h-1 mx-auto rounded-full mt-4;
+    background: linear-gradient(90deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 20px -5px hsl(var(--secondary) / 0.4);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px -5px hsl(var(--primary) / 0.4);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px -5px hsl(var(--secondary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px -5px hsl(var(--secondary) / 0.6);
+    }
+  }
+}
